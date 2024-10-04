@@ -1,0 +1,236 @@
+1. Describe a network transaction: What happens when you google funny cat pictures?
+2. How can you hide an HTML element on a page using only CSS?
+3. What is the difference between a strongly typed and loosely typed language?
+4. What is an automatic exception?
+5. What is a NullPointerException?
+6. what is a ClassNotFoundException?
+7. What does the doctype for an html page mean?
+8. How would I open a new window using javascript?
+9. What is the DOM?
+10. What is the difference between Array.splice() and Array.slice() method in JavaScript?
+11. List few differences between primitive and non-primitive JavaScript data types.
+12. How to Clone an object in JavaScript?
+13. Explain Authentication and Authorization.
+14. Logical assignment:
+What is the difference between == and ===?
+15. What is an AJAX call?
+16. What is the value of b in the following scenarios?
+  var a;
+  var b = a || "dog";
+  // answer: dog
+  var a = [];
+  var b = a || "cat";
+  // answer: []
+
+  var a = false;
+  var b = a || "parakeet"
+  // answer: parakeet
+
+17. Given the variables below, answer the following:
+var a = 10
+var b = "1"
+var c = 45
+
+1)    a+b = ?
+2)    a+c = ?
+3)    c+b = ?
+4)    a+b+c= ?
+Answers :
+1)    101
+2)    55
+3)    451
+4)    10145
+
+18. What will be the output of the following code?
+
+
+var bar = true;
+1) console.log(bar + 0);   
+2) console.log(bar + "xyz");  
+3) console.log(bar + true);  
+4) console.log(bar + false);
+Answers :
+1) 1
+2) "truexyz"
+3) 2
+4) 1
+ 
+19. What would be the output of the following code?
+function User(name) {
+  this.name = name || "JsGeeks";
+}
+var person = new User("xyz")["location"] = "USA";
+console.log(person);
+Answer:
+The output of above code would be "USA"
+
+
+20. What would be the output of the following code?
+var arrA = [0,1,2,3,4,5];
+var arrB = arrA;
+arrB[0]=42;
+console.log(arrA) ;
+Answer :
+The output will be [42,1,2,3,4,5]
+
+21. In the following example, what is the value of e.breed after the code is executed?
+
+let e = {
+species: "dog",
+breed: "poodle",
+tail_wag: "hard"
+};
+var e2 = e;
+e2.breed = "t-rex";
+
+22. How do you decode a JSON string?
+
+23. Is this valid JSON?
+{
+  "person":{
+    "first_name":"Abraham",
+    "last_name":"Lincoln",
+    "height": 76,
+    "home_state": 'Kentucky'
+  }
+}
+
+24. How would you access the author of the second book?
+
+
+var data = {
+    "book": [
+        {
+            "id": "01",
+            "language": "Java",
+            "edition": "third",
+            "author": "Herbert Schildt"
+        },
+        {
+            "id": "07",
+            "language": "C++",
+            "edition": "second",
+            "author": "E.Balagurusamy"
+        }
+    ]
+}
+data.book[1].author
+
+25. What’s the difference between virtual DOM and shadow DOM?
+
+26. How do you pass an onClick function to an element in Reactjs?
+ 
+<div onClick={this.myFunction}></div>
+
+27. What does this component do?
+
+import React, { Component } from 'react';
+class FruitList extends Component {
+    constructor(props) {
+        super(props);
+        this.fruit = ["apple","banana","orange"];
+        this.list = this.fruit.map((fruit)=>{
+          return `<li>${fruit}</li>`;
+        })
+      }
+    render() {
+        return (
+            <div >
+                <ul>${this.list}</ul>
+            </div>
+        );
+    }
+}
+export default FruitList;
+
+28. 1. Name two ways to pause a script's execution in the browser.
+- possible answers: set a breakpoint, use the debugger; statement, hit the pause button in the dev tools, click "break on exceptions"
+ 
+29. Let's say I have some client side code that needs to make a call to the server to get some data and it isn't working the way I expect. What can I do to determine if the issue is on the client or server side when I don’t have access to the server or the code?
+- possible answers: check the network tab to see if the request is sent and check the response for that request. use a breakpoint to see if the callback executes. check the server for any errors
+
+30. Debug this code snippet:
+ 
+function broken(str){
+var b = 0;
+if(a = 5)
+  b = a
+else
+  b = 5;
+  return b
+for(var i = 0; i <= str.length; i++){
+    str[i] = (str[i] === z) ? y : n;
+}
+str;
+}
+
+31. Talk me through what this script does:
+
+
+function myFunction() {
+    var x, text;
+    x = document.getElementById("number").value;
+    if (isNaN(x) || x < 1 || x > 10) {
+        text = "Input not valid";
+    } else {
+        text = "Input OK";
+    }
+    document.getElementById("demo").innerHTML = text;
+}
+
+32. Angularjs:
+What is $scope?
+ 
+$scope is how a controller delivers the model to the view. It also will contain the set of data and functions available to the controller.
+
+33. Let’s say you have an array var fruits = [“apple”,”banana”,”orange”];
+How can you create some HTML element that repeats for each item in the array with only one line of HTML using angular?
+ 
+// answer: <div ng-repeat=”fruit in fruits>{{fruit}}</div>
+
+34. What is one-time data-binding and what is the syntax for using it?
+One time data binding allows the template to reference data from the $scope when it loads but that element will not be updated if the controller data changes.
+{{::my_var}}
+
+35. Java
+What is happening in this stack trace?
+10:51:00.556 Error API_INT-thread-3 4B06BB5F1B38338403BB3333CC4BCB6B txid=6656ff131b78 SEVERE *** ERROR *** java.lang.NullPointerException
+java.lang.NullPointerException
+at com.glide.encryption.PlatformEncrypterDecrypter.encrypt(PlatformEncrypterDecrypter.java:63)
+at com.glide.encryption.PlatformEncrypterDecrypter.getEncryptedValue(PlatformEncrypterDecrypter.java:39)
+at com.glide.element.decorator.GEPlatformEncryptedValueDecorator.decorateSetDisplayValue(GEPlatformEncryptedValueDecorator.java:85)
+at com.glide.element.decorator.GEPlatformEncryptedValueDecorator.decorateSetDisplayValue(GEPlatformEncryptedValueDecorator.java:36)
+at com.glide.script.GlideElement.setDisplayValue(GlideElement.java:1354)
+at com.glide.vars2.OptionMap.apply(OptionMap.java:55)
+at com.glideapp.servicecatalog.valve.ProducerValve.produceItem(ProducerValve.java:363)
+at com.glideapp.servicecatalog.valve.ProducerValve.produceItem(ProducerValve.java:247)
+at com.glideapp.servicecatalog.CatalogItem.submitProducer(CatalogItem.java:1943)
+at com.glideapp.servicecatalog.scoped.api.CatalogItemJS.jsFunction_submitProducer(CatalogItemJS.java:479)
+
+36. What is the difference between an object and a class?
+
+37. How do you instantiate an object in java?
+
+38. What is the difference between method overriding and method overloading?
+ 
+Overloading allows you to define a method with the same name but different parameters. Overriding redefines the method.
+
+39. What is the difference between a private and a public method?
+ 
+Private methods can only be called inside the object that defines them. Public methods can be called by the code using the object.
+
+40. What does it mean to extend a class?
+ 
+Extending a class creates a new class that inherits the properties and methods of the existing class and allows you to override and add new properties and methods to the new subclass.
+
+41. What is a primary key?
+
+42. What command would you use to get information about a table. For instance, the columns, their data type, length, etc…
+ 
+describe table, desc table
+
+43. What is an index?
+ 
+An index is performance tuning method of allowing faster retrieval of records from the table. An index creates an entry for each value and it will be faster to retrieve data.
+
+44. Write the programming logic for palindrome
