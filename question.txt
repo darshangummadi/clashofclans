@@ -234,3 +234,6 @@ describe table, desc table
 An index is performance tuning method of allowing faster retrieval of records from the table. An index creates an entry for each value and it will be faster to retrieve data.
 
 44. Write the programming logic for palindrome
+
+
+https://dev181357.service-now.com/nav_to.do?uri=incident.do?sys_id=46e482d9a9fe198101d3e3f3e2a14459

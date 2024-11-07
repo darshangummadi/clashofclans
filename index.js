@@ -70,7 +70,62 @@ function setBgRed() {
     document.body.style.backgroundColor = 'black'
 }
 
+var longestCommonPrefix = function(strs) {
+    if(!strs || strs.length === 0){
+        return "";
+    }
+    let minLength = Infinity;
 
+    for (let s of strs){
+        if (s.length < minLength){
+            minLength = s.length;
+        }
+    }
 
+    let i = 0;
+    while (i < minLength){
+        let currentChar = strs[0][i];
+        for (let s of strs){
+            if (s[i] != currentChar){
+                return s.slice(0,i);
+            }
+        }
+        i++;
+    }
+    return strs[0].slice(0,i);
+}
+
+var generate = function(numRows) {
+    const rows = [];
+    const firstRow = [1];
+    rows.push(firstRow);
+    for (let i = 1; i < numRows; i++) {
+        const prevRow = rows[i-1];
+        const newRow = [1];
+        for (let j = 1; j < prevRow.length; j++) {
+            newRow.push(prevRow[j-1] + prevRow[j]);
+        }
+        newRow.push(1);
+        rows.push(newRow);
+    }
+    return rows;
+};
+
+var lengthOfLongestSubstring = function(s) {
+    let l = 0;
+    let longest = 0;
+    const set = new Set();
+    const n = s.length;
+
+    for (let r = 0; r < n; r++){
+        while (set.has(s[r])){
+            set.delete(s[l]);
+            l++;
+        }
+        set.add(s[r]);
+        longest = Math.max(longest, r - l + 1);
+    }
+    return longest;
+}
 
 

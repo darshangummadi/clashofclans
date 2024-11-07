@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    background-color: #f0f4f7;
+}
+
+.sidebar {
+    width: 240px;
+    background-color: #1f2a3d;
+    padding: 20px;
+    color: white;
+    height: 100vh;
+}
+
+.sidebar h1 {
+    font-size: 24px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.menu {
+    list-style-type: none;
+}
+
+.menu li {
+    margin-bottom: 20px;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: #ffffff;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.search-bar {
+    width: 300px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.content {
+    margin-top: 20px;
+}
+
+.plan-header h2 {
+    font-size: 24px;
+}
+
+.plan-header p {
+    color: gray;
+}
+
+.tabs button {
+    margin-right: 10px;
+    padding: 10px;
+    border: none;
+    background-color: #f0f4f7;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.task-list {
+    margin-top: 20px;
+}
+
+.task {
+    display: flex;
+    justify-content: space-between;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.date {
+    color: #aaa;
+}
+
+.right-sidebar {
+    width: 240px;
+    padding: 20px;
+    background-color: #f0f4f7;
+    border-left: 1px solid #ddd;
+    height: 100vh;
+}
+
+.details, .invoice {
+    margin-bottom: 30px;
+}
+
+.details h3, .invoice h3 {
+    margin-bottom: 10px;
+}
+
+.status.pending {
+    background-color: #ffd700;
+    color: black;
+    padding: 5px 10px;
+    border-radius: 5px;
+}

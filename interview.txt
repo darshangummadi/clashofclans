@@ -272,3 +272,11 @@ An index is performance tuning method of allowing faster retrieval of records fr
  
 Programming:
 Write the programming logic for palindrome
+
+
+
+
+(description= 
+(retry_count=20)(retry_delay=3)(address=(protocol=tcps)(port=1522)
+(host=adb.us-ashburn-1.oraclecloud.com))(connect_data=
+(service_name=gf63e059c3dfcbd_ax9cd7nk6hac0um4_high.adb.oraclecloud.com))(security=(ssl_server_dn_match=yes)))
