@@ -1,5 +1,6 @@
 import requests
 import cx_Oracle
+import pandas as pd
 
 # Oracle DB connection setup
 def connect_to_oracle():
