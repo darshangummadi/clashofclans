@@ -46,6 +46,36 @@ def insert_data_to_oracle(connection, data):
     cursor.execute(insert_query, data)
     connection.commit()
 
+# Check if player already exits in the table
+def check_player(connection, data):
+    tag_json = data['tag']
+    cursor = connection.cursor()
+    check_query = "select count(*) from PLAYERSTATS where tag = :tag"
+    cursor.execute(check_query, {'tag': tag_json})
+    count = cursor.fetchone()[0]
+    if count > 0:
+        return True
+    else:
+        flag_query = "update playerstats set exit = 1 where tag = :tag"
+        cursor.execute(flag_query, {'tag': tag_json})
+        connection.commit()
+        return False
+    
+# update the new donation value
+def update_player(connection, data):
+    tag_json = data['tag']
+    new_donation = data['donations']
+    cursor = connection.cursor()
+    update_query = """
+        update PLAYERSTATS 
+        set old_donation = case when exit = 1 then donation ELSE null END,
+        donation = case when exit is null then new_donation else old_donation + :new_donation end,
+        where tag = :tag
+        """
+    cursor.execute(update_query, {'tag': tag_json, 'new_donation': new_donation})
+    connection.commit()
+
+
 # Main logic
 def main():
     api_url = "https://api.clashofclans.com/v1/clans/%232UJJ0VYG"
@@ -58,8 +88,11 @@ def main():
         
         for player in members:
             essential_data = extract_essential_data(player)
-            insert_data_to_oracle(connection, essential_data)
-        
+            player_exits = check_player(essential_data)
+            if player_exits:
+                update_player(connection, essential_data)
+            else:
+                insert_data_to_oracle(connection, essential_data)
         connection.close()
 
 if __name__ == "__main__":
